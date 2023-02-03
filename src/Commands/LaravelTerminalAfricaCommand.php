@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Cybernerdie\LaravelTerminalAfrica\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class LaravelTerminalAfricaCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-terminal-africa';
 
     public $description = 'My command';
 
