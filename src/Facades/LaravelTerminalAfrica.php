@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Facade;
 
 /**
  * @see \Cybernerdie\LaravelTerminalAfrica\LaravelTerminalAfrica
- */
+ */ 
 class LaravelTerminalAfrica extends Facade
 {
     protected static function getFacadeAccessor()
