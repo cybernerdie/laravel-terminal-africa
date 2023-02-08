@@ -33,6 +33,9 @@
         "phpunit/phpunit": "^9.5"
     },
     "autoload": {
+        "files": [
+            "src/Helpers/TerminalAfricaHelper.php"
+        ],
         "psr-4": {
             "Cybernerdie\\LaravelTerminalAfrica\\": "src",
             "Cybernerdie\\LaravelTerminalAfrica\\Database\\Factories\\": "database/factories"

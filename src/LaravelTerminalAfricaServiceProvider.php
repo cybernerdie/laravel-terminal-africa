@@ -2,13 +2,12 @@
 
 namespace Cybernerdie\LaravelTerminalAfrica;
 
+
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Cybernerdie\LaravelTerminalAfrica\Facades\LaravelTerminalAfrica as TerminalAfricaFacade;
-use Cybernerdie\LaravelTerminalAfrica\LaravelTerminalAfrica as TerminalAfrica;
-use Cybernerdie\LaravelTerminalAfrica\ApiTraits\CustomersApiTrait;
-use Cybernerdie\LaravelTerminalAfrica\ApiTraits\RatesApiTrait;
-use Cybernerdie\LaravelTerminalAfrica\ApiTraits\ShipmentsApiTrait;
+use Cybernerdie\LaravelTerminalAfrica\Facades\TerminalAfricaFacade;
+use Cybernerdie\LaravelTerminalAfrica\TerminalAfrica;
+
 
 class LaravelTerminalAfricaServiceProvider extends PackageServiceProvider
 {
@@ -26,13 +25,5 @@ class LaravelTerminalAfricaServiceProvider extends PackageServiceProvider
 
     public function packageRegistered()
     {
-        $this->app->singleton(TerminalAfricaFacade::class, function ($app) {
-            return new TerminalAfrica(
-                new ShipmentsApiTrait(),
-                new RatesApiTrait(),
-                new CustomersApiTrait()
-            );
-        });
-
     }
 }

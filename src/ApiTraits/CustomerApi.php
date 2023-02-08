@@ -2,7 +2,7 @@
 
 namespace Cybernerdie\LaravelTerminalAfrica\ApiTraits;
 
-trait ShipmentsApiTrait
+trait CustomerApi
 {
 
 }
