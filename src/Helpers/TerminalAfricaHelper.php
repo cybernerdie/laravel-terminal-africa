@@ -2,12 +2,12 @@
 
 namespace Cybernerdie\LaravelTerminalAfrica\Helpers;
 
-use Cybernerdie\LaravelTerminalAfrica\TerminalAfrica;
+use Cybernerdie\LaravelTerminalAfrica\Contracts\TerminalAfricaContract;
 
 if (! function_exists('terminal_africa')) {
-    function terminal_africa(): TerminalAfrica
+    function terminal_africa(): TerminalAfricaContract
     {
-        return app()->make(TerminalAfrica::class);
+        return app()->make(TerminalAfricaContract::class);
     }
 }
 

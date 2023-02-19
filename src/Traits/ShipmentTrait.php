@@ -1,8 +1,8 @@
 <?php
 
-namespace Cybernerdie\LaravelTerminalAfrica\ApiTraits;
+namespace Cybernerdie\LaravelTerminalAfrica\Traits;
 
-trait ShipmentApi
+trait ShipmentTrait
 {
     /**
      * Endpoint for shipment API calls
@@ -21,7 +21,7 @@ trait ShipmentApi
         $endpoint = self::SHIPMENT_ENDPOINT;
         $method = 'GET';
 
-        return $this->makeApiRequest($endpoint, $method);
+        return $this->makeRequest($endpoint, $method);
     }
 
 
@@ -36,6 +36,6 @@ trait ShipmentApi
         $endpoint = self::SHIPMENT_ENDPOINT . $shipmentId;
         $method = 'GET';
 
-        return $this->makeApiRequest($endpoint, $method);
+        return $this->makeRequest($endpoint, $method);
     }
 }

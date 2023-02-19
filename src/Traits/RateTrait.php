@@ -1,8 +1,8 @@
 <?php
 
-namespace Cybernerdie\LaravelTerminalAfrica\ApiTraits;
+namespace Cybernerdie\LaravelTerminalAfrica\Traits;
 
-trait RateApi
+trait RateTrait
 {
  /**
      * Endpoint for rate API calls
@@ -21,7 +21,7 @@ trait RateApi
         $endpoint = self::RATE_ENDPOINT;
         $method = 'GET';
 
-        return $this->makeApiRequest($endpoint, $method);
+        return $this->makeRequest($endpoint, $method);
     }
 
 
@@ -36,6 +36,6 @@ trait RateApi
         $endpoint = self::RATE_ENDPOINT . $rateId;
         $method = 'GET';
 
-        return $this->makeApiRequest($endpoint, $method);
+        return $this->makeRequest($endpoint, $method);
     }
 }

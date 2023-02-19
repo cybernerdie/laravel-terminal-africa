@@ -2,11 +2,9 @@
 
 namespace Cybernerdie\LaravelTerminalAfrica;
 
-
+use Cybernerdie\LaravelTerminalAfrica\Contracts\TerminalAfricaContract;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Cybernerdie\LaravelTerminalAfrica\Facades\TerminalAfricaFacade;
-use Cybernerdie\LaravelTerminalAfrica\TerminalAfrica;
 
 
 class LaravelTerminalAfricaServiceProvider extends PackageServiceProvider
@@ -25,5 +23,6 @@ class LaravelTerminalAfricaServiceProvider extends PackageServiceProvider
 
     public function packageRegistered()
     {
+        $this->app->bind(TerminalAfricaContract::class, TerminalAfricaService::class);
     }
 }
