@@ -45,7 +45,7 @@ class TerminalAfricaService implements TerminalAfricaContract
      /**
      * The HTTP client
      */
-    protected $client;
+    protected Client $client;
 
     /**
      * The response from the request
