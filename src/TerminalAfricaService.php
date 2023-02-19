@@ -45,7 +45,7 @@ class TerminalAfricaService implements TerminalAfricaContract
      /**
      * The HTTP client
      */
-    protected Client $client;
+    protected $client;
 
     /**
      * The response from the request
@@ -136,7 +136,8 @@ class TerminalAfricaService implements TerminalAfricaContract
      *
      * @param string $endpoint
      * @param string $method
-     * @param array $data
+     * @param array $queryParams
+     * @param array $formParams
      * @return array
      */
     public function makeRequest(string $endpoint, string $method, array $queryParams = [], array $formParams = []): array
