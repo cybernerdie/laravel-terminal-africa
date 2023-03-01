@@ -3,13 +3,11 @@
 namespace Cybernerdie\LaravelTerminalAfrica\Traits;
 
 use Cybernerdie\LaravelTerminalAfrica\Constants\TerminalAfricaConstant;
+
 trait UserApi
 {
     /**
      * This endpoint allows you to retrieve details for a user account.
-     *
-     * @param string $userId
-     * @return array
      */
     public function getUser(string $userId): array
     {
@@ -23,9 +21,6 @@ trait UserApi
 
     /**
      * This endpoint allows you to retrieve details of a user's wallet.
-     *
-     * @param array $queryParams
-     * @return array
      */
     public function getWalletBalance(array $queryParams): array
     {
@@ -40,9 +35,6 @@ trait UserApi
 
     /**
      * This endpoint allows to get a list of carriers for a specific user.
-     *
-     * @param array $queryParams
-     * @return array
      */
     public function getUserCarriers(array $queryParams = []): array
     {

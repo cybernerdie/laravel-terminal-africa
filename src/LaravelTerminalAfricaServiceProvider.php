@@ -6,7 +6,6 @@ use Cybernerdie\LaravelTerminalAfrica\Contracts\TerminalAfricaContract;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-
 class LaravelTerminalAfricaServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void

@@ -3,14 +3,11 @@
 namespace Cybernerdie\LaravelTerminalAfrica\Traits;
 
 use Cybernerdie\LaravelTerminalAfrica\Constants\TerminalAfricaConstant;
+
 trait AddressApi
 {
     /**
      * This method allows you to get a list of all addresses available.
-     *
-     * @param array $queryParams
-     *
-     * @return array
      */
     public function getAddresses(array $queryParams = []): array
     {
@@ -25,10 +22,6 @@ trait AddressApi
 
     /**
      * This method allows you to retrieve the details of a specific address.
-     *
-     * @param string $addressId
-     *
-     * @return array
      */
     public function getAddress(string $addressId): array
     {
@@ -42,10 +35,6 @@ trait AddressApi
 
     /**
      * This method allows you create an address for getting rates or arranging pickup and delivery.
-     *
-     * @param array $formParams
-     *
-     * @return array
      */
     public function createAddress(array $formParams): array
     {
@@ -60,10 +49,6 @@ trait AddressApi
 
     /**
      * This method allows you to update an address for getting rates or arranging pickup and delivery.
-     *
-     * @param  array $formParams
-     *
-     * @return array
      */
     public function updateAddress(string $addressId, array $formParams): array
     {
@@ -78,10 +63,6 @@ trait AddressApi
 
     /**
      * This method allows you to validate the details of any global address.
-     *
-     * @param  array $formParams
-     *
-     * @return array
      */
     public function validateAddress(array $formParams): array
     {
@@ -96,10 +77,6 @@ trait AddressApi
 
     /**
      * This method allows you to set an address as a default sender
-     *
-     * @param array $formParams
-     *
-     * @return array
      */
     public function setDefaultAddress(array $formParams): array
     {
@@ -114,8 +91,6 @@ trait AddressApi
 
     /**
      * This method allows you to get the sender default address
-     *
-     * @return array
      */
     public function getDefaultAddress(): array
     {

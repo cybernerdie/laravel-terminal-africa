@@ -3,13 +3,11 @@
 namespace Cybernerdie\LaravelTerminalAfrica\Traits;
 
 use Cybernerdie\LaravelTerminalAfrica\Constants\TerminalAfricaConstant;
+
 trait TransactionApi
 {
     /**
      * This endpoint allows you to get a list of all transactions on an account.
-     *
-     * @param array $queryParams
-     * @return array
      */
     public function getTransactions(array $queryParams): array
     {
@@ -24,9 +22,6 @@ trait TransactionApi
 
     /**
      * This endpoint allows you to retrieve details for a transaction.
-     *
-     * @param string $transactionId
-     * @return array
      */
     public function getTransaction(string $transactionId): array
     {

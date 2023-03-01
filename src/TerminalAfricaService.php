@@ -2,7 +2,6 @@
 
 namespace Cybernerdie\LaravelTerminalAfrica;
 
-use GuzzleHttp\Client;
 use Cybernerdie\LaravelTerminalAfrica\Contracts\TerminalAfricaContract;
 use Cybernerdie\LaravelTerminalAfrica\Exceptions\TerminalAfricaException;
 use Cybernerdie\LaravelTerminalAfrica\Traits\AddressApi;
@@ -16,6 +15,7 @@ use Cybernerdie\LaravelTerminalAfrica\Traits\RateApi;
 use Cybernerdie\LaravelTerminalAfrica\Traits\ShipmentApi;
 use Cybernerdie\LaravelTerminalAfrica\Traits\TransactionApi;
 use Cybernerdie\LaravelTerminalAfrica\Traits\UserApi;
+use GuzzleHttp\Client;
 use Illuminate\Http\Client\RequestException;
 
 class TerminalAfricaService implements TerminalAfricaContract
@@ -26,15 +26,11 @@ class TerminalAfricaService implements TerminalAfricaContract
 
     /**
      * The base uri to consume the Terminal Africa API
-     *
-     * @var string
      */
     protected string $baseUri;
 
     /**
      * The secret to consume the Terminal Africa API
-     *
-     * @var string
      */
     protected string $secret;
 
@@ -89,12 +85,10 @@ class TerminalAfricaService implements TerminalAfricaContract
 
     /**
      * Set the authorization header.
-     *
-     * @return string
      */
     public function setAuthorizationHeader(): string
     {
-        return 'Bearer ' . $this->secret;
+        return 'Bearer '.$this->secret;
     }
 
     /**
@@ -117,8 +111,6 @@ class TerminalAfricaService implements TerminalAfricaContract
 
     /**
      * Set the client.
-     *
-     * @return void
      */
     public function setClient(): void
     {
@@ -129,12 +121,6 @@ class TerminalAfricaService implements TerminalAfricaContract
 
     /**
      * Make the actual API request
-     *
-     * @param string $endpoint
-     * @param string $method
-     * @param array $queryParams
-     * @param array $formParams
-     * @return array
      */
     public function makeRequest(string $endpoint, string $method, array $queryParams = [], array $formParams = []): array
     {
@@ -158,8 +144,6 @@ class TerminalAfricaService implements TerminalAfricaContract
 
     /**
      * Format the response from the API request
-     *
-     * @return mixed
      */
     public function formatResponse(): mixed
     {

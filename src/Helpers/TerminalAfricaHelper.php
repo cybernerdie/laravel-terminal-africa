@@ -10,5 +10,3 @@ if (! function_exists('terminal_africa')) {
         return app()->make(TerminalAfricaContract::class);
     }
 }
-
-

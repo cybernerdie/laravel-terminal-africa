@@ -8,10 +8,6 @@ trait CarrierApi
 {
     /**
      * This method allows you to get a list of carriers available on TShip.
-     *
-     * @param  array $queryParams
-     *
-     * @return array
      */
     public function getCarriers(array $queryParams = []): array
     {
@@ -26,10 +22,6 @@ trait CarrierApi
 
     /**
      * This method allows you to retrieve details of a specific carrier.
-     *
-     * @param string $carrierId
-     *
-     * @return array
      */
     public function getCarrier(string $carrierId): array
     {
@@ -44,11 +36,6 @@ trait CarrierApi
     /**
      * This method allows you to enable a carrier. One of domestic,
      * international or regional query parameters is required in request.
-     *
-     * @param string $carrierId
-     * @param  array $queryParams
-     *
-     * @return array
      */
     public function enableCarrier(string $carrierId, array $queryParams): array
     {
@@ -63,10 +50,6 @@ trait CarrierApi
 
     /**
      * This method allows you to enable multiple carriers in a single call.
-     *
-     * @param  array $formParams
-     *
-     * @return array
      */
     public function enableMultipleCarriers(array $formParams): array
     {
@@ -81,11 +64,6 @@ trait CarrierApi
 
     /**
      * This method allows you to disable a carrier.
-     *
-     * @param string $carrierId
-     * @param  array $queryParams
-     *
-     * @return array
      */
     public function disableCarrier(string $carrierId, array $queryParams): array
     {
@@ -100,10 +78,6 @@ trait CarrierApi
 
     /**
      * This method allows you to disable multiple carriers in a single call.
-     *
-     * @param  array $formParams
-     *
-     * @return array
      */
     public function disableMultipleCarriers(array $formParams): array
     {

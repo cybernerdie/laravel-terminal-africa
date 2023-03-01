@@ -2,13 +2,10 @@
 
 namespace Cybernerdie\LaravelTerminalAfrica\Traits;
 
-use Cybernerdie\LaravelTerminalAfrica\Constants\TerminalAfricaConstant;
 trait LocationApi
 {
     /**
      * This endpoint allows you to retrieve a list of valid countries.
-     *
-     * @return array
      */
     public function getCountries(): array
     {
@@ -22,9 +19,6 @@ trait LocationApi
 
     /**
      * This endpoint allows you to retrieve a list of valid states for a given country.
-     *
-     * @param array $queryParams
-     * @return array
      */
     public function getStates(array $queryParams): array
     {
@@ -37,11 +31,8 @@ trait LocationApi
         );
     }
 
-     /**
+    /**
      * This endpoint allows you to retrieve a list of valid cities available in a specific country.
-     *
-     * @param array $queryParams
-     * @return array
      */
     public function getCities(array $queryParams): array
     {

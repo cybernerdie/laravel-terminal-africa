@@ -2,9 +2,8 @@
 
 namespace Cybernerdie\LaravelTerminalAfrica\Tests;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
-use Orchestra\Testbench\TestCase as Orchestra;
 use Cybernerdie\LaravelTerminalAfrica\LaravelTerminalAfricaServiceProvider;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {

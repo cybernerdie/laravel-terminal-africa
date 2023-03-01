@@ -3,14 +3,11 @@
 namespace Cybernerdie\LaravelTerminalAfrica\Traits;
 
 use Cybernerdie\LaravelTerminalAfrica\Constants\TerminalAfricaConstant;
+
 trait ParcelApi
 {
     /**
      * This method allows you to create a new parcel for a shipment.
-     *
-     * @param  array $formParams
-     *
-     * @return array
      */
     public function createParcel(array $formParams): array
     {
@@ -25,10 +22,6 @@ trait ParcelApi
 
     /**
      * This method allows you to retrieve a list of packaging available for a user.
-     *
-     * @param  array $queryParams
-     *
-     * @return array
      */
     public function getParcels(array $queryParams = []): array
     {
@@ -43,10 +36,6 @@ trait ParcelApi
 
     /**
      * This method allows you to retrieve details of a specific parcel.
-     *
-     * @param string $parcelId
-     *
-     * @return array
      */
     public function getParcel(string $parcelId): array
     {
@@ -60,10 +49,6 @@ trait ParcelApi
 
     /**
      * This method allows you to update an existing parcel.
-     *
-     * @param array $formParams
-     *
-     * @return array
      */
     public function updateParcel(string $parcelId, array $formParams): array
     {

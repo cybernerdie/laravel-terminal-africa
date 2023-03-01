@@ -3,14 +3,11 @@
 namespace Cybernerdie\LaravelTerminalAfrica\Traits;
 
 use Cybernerdie\LaravelTerminalAfrica\Constants\TerminalAfricaConstant;
+
 trait PackagingApi
 {
     /**
      * This method allows you to add new packaging.
-     *
-     * @param  array $formParams
-     *
-     * @return array
      */
     public function createPackaging(array $formParams): array
     {
@@ -25,10 +22,6 @@ trait PackagingApi
 
     /**
      * This method allows you to retrieve a list of packaging available for a user.
-     *
-     * @param  array $queryParams
-     *
-     * @return array
      */
     public function getPackagingList(array $queryParams = []): array
     {
@@ -43,10 +36,6 @@ trait PackagingApi
 
     /**
      * This method allows you to retrieve details of a specific packaging.
-     *
-     * @param string $packagingId
-     *
-     * @return array
      */
     public function getPackaging(string $packagingId): array
     {
@@ -60,10 +49,6 @@ trait PackagingApi
 
     /**
      * This method allows you to update an existing packaging.
-     *
-     * @param array $formParams
-     *
-     * @return array
      */
     public function updatePackaging(string $packagingId, array $formParams): array
     {
