@@ -2,15 +2,10 @@
 
 namespace Cybernerdie\LaravelTerminalAfrica\Traits;
 
+use Cybernerdie\LaravelTerminalAfrica\Constants\TerminalAfricaConstant;
+
 trait ClaimApi
 {
-    /**
-     * Endpoint for claims API calls
-     *
-     * @var string
-     */
-    const CLAIM_ENDPOINT = '/claims';
-
     /**
      * This method allows you to get a list of claims available for a specific user
      *
@@ -20,7 +15,7 @@ trait ClaimApi
      */
     public function getClaims(array $queryParams = []): array
     {
-        $endpoint = sprintf('%s', self::CLAIM_ENDPOINT);
+        $endpoint = sprintf('%s', TerminalAfricaConstant::CLAIM_ENDPOINT);
 
         return $this->makeRequest(
             method: 'GET',
@@ -38,7 +33,7 @@ trait ClaimApi
      */
     public function getClaim(string $claimId): array
     {
-        $endpoint = sprintf('%s/%s', self::CLAIM_ENDPOINT, $claimId);
+        $endpoint = sprintf('%s/%s', TerminalAfricaConstant::CLAIM_ENDPOINT, $claimId);
 
         return $this->makeRequest(
             method: 'GET',
@@ -56,7 +51,7 @@ trait ClaimApi
      */
     public function fileClaim(string $insuranceReference, array $formParams): array
     {
-        $endpoint = sprintf('%s', self::CLAIM_ENDPOINT);
+        $endpoint = sprintf('%s', TerminalAfricaConstant::CLAIM_ENDPOINT);
 
         $requestData = [
             'claim' => $formParams,

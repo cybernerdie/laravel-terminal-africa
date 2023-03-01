@@ -2,15 +2,9 @@
 
 namespace Cybernerdie\LaravelTerminalAfrica\Traits;
 
+use Cybernerdie\LaravelTerminalAfrica\Constants\TerminalAfricaConstant;
 trait TransactionApi
 {
-    /**
-     * Endpoint for transaction API calls
-     *
-     * @var string
-     */
-    const TRANSACTION_ENDPOINT = '/transactions';
-
     /**
      * This endpoint allows you to get a list of all transactions on an account.
      *
@@ -19,7 +13,7 @@ trait TransactionApi
      */
     public function getTransactions(array $queryParams): array
     {
-        $endpoint = sprintf('%s', self::TRANSACTION_ENDPOINT);
+        $endpoint = sprintf('%s', TerminalAfricaConstant::TRANSACTION_ENDPOINT);
 
         return $this->makeRequest(
             method: 'GET',
@@ -36,7 +30,7 @@ trait TransactionApi
      */
     public function getTransaction(string $transactionId): array
     {
-        $endpoint = sprintf('%s/%s', self::TRANSACTION_ENDPOINT, $transactionId);
+        $endpoint = sprintf('%s/%s', TerminalAfricaConstant::TRANSACTION_ENDPOINT, $transactionId);
 
         return $this->makeRequest(
             method: 'GET',

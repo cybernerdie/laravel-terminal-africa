@@ -2,15 +2,10 @@
 
 namespace Cybernerdie\LaravelTerminalAfrica\Traits;
 
+use Cybernerdie\LaravelTerminalAfrica\Constants\TerminalAfricaConstant;
+
 trait InsuranceApi
 {
-    /**
-     * Endpoint for insurance API calls
-     *
-     * @var string
-     */
-    const INSURANCE_ENDPOINT = '/insurance';
-
     /**
      * This method allows you to retrieve a list of insurance premiums available for a user.
      *
@@ -20,7 +15,7 @@ trait InsuranceApi
      */
     public function getInsuranceList(array $queryParams = []): array
     {
-        $endpoint = sprintf('%s', self::INSURANCE_ENDPOINT);
+        $endpoint = sprintf('%s', TerminalAfricaConstant::INSURANCE_ENDPOINT);
 
         return $this->makeRequest(
             method: 'GET',
@@ -38,7 +33,7 @@ trait InsuranceApi
      */
     public function getInsurance(string $insuranceId): array
     {
-        $endpoint = sprintf('%s/%s', self::INSURANCE_ENDPOINT, $insuranceId);
+        $endpoint = sprintf('%s/%s', TerminalAfricaConstant::INSURANCE_ENDPOINT, $insuranceId);
 
         return $this->makeRequest(
             method: 'GET',
@@ -55,7 +50,7 @@ trait InsuranceApi
      */
     public function getInsurancePremium(array $queryParams): array
     {
-        $endpoint = sprintf('%s', self::INSURANCE_ENDPOINT);
+        $endpoint = sprintf('%s', TerminalAfricaConstant::INSURANCE_ENDPOINT);
 
         return $this->makeRequest(
             method: 'GET',
@@ -73,7 +68,7 @@ trait InsuranceApi
      */
     public function purchaseInsurance(array $formParams): array
     {
-        $endpoint = sprintf('%s/purchase', self::INSURANCE_ENDPOINT);
+        $endpoint = sprintf('%s/purchase', TerminalAfricaConstant::INSURANCE_ENDPOINT);
 
         return $this->makeRequest(
             method: 'POST',

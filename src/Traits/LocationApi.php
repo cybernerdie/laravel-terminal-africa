@@ -2,6 +2,7 @@
 
 namespace Cybernerdie\LaravelTerminalAfrica\Traits;
 
+use Cybernerdie\LaravelTerminalAfrica\Constants\TerminalAfricaConstant;
 trait LocationApi
 {
     /**

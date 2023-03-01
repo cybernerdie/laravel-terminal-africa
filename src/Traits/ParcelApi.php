@@ -2,15 +2,9 @@
 
 namespace Cybernerdie\LaravelTerminalAfrica\Traits;
 
+use Cybernerdie\LaravelTerminalAfrica\Constants\TerminalAfricaConstant;
 trait ParcelApi
 {
-    /**
-     * Endpoint for parcel API calls
-     *
-     * @var string
-     */
-    const PARCEL_ENDPOINT = '/parcels';
-
     /**
      * This method allows you to create a new parcel for a shipment.
      *
@@ -20,7 +14,7 @@ trait ParcelApi
      */
     public function createParcel(array $formParams): array
     {
-        $endpoint = sprintf('%s', self::PARCEL_ENDPOINT);
+        $endpoint = sprintf('%s', TerminalAfricaConstant::PARCEL_ENDPOINT);
 
         return $this->makeRequest(
             method: 'POST',
@@ -38,7 +32,7 @@ trait ParcelApi
      */
     public function getParcels(array $queryParams = []): array
     {
-        $endpoint = sprintf('%s', self::PARCEL_ENDPOINT);
+        $endpoint = sprintf('%s', TerminalAfricaConstant::PARCEL_ENDPOINT);
 
         return $this->makeRequest(
             method: 'GET',
@@ -56,7 +50,7 @@ trait ParcelApi
      */
     public function getParcel(string $parcelId): array
     {
-        $endpoint = sprintf('%s/%s', self::PARCEL_ENDPOINT, $parcelId);
+        $endpoint = sprintf('%s/%s', TerminalAfricaConstant::PARCEL_ENDPOINT, $parcelId);
 
         return $this->makeRequest(
             method: 'GET',
@@ -73,7 +67,7 @@ trait ParcelApi
      */
     public function updateParcel(string $parcelId, array $formParams): array
     {
-        $endpoint = sprintf('%s/%s', self::PARCEL_ENDPOINT, $parcelId);
+        $endpoint = sprintf('%s/%s', TerminalAfricaConstant::PARCEL_ENDPOINT, $parcelId);
 
         return $this->makeRequest(
             method: 'PUT',

@@ -2,15 +2,9 @@
 
 namespace Cybernerdie\LaravelTerminalAfrica\Traits;
 
+use Cybernerdie\LaravelTerminalAfrica\Constants\TerminalAfricaConstant;
 trait ShipmentApi
 {
-    /**
-     * Endpoint for shipment API calls
-     *
-     * @var string
-     */
-    const SHIPMENT_ENDPOINT = '/shipments';
-
     /**
      * This method allows you to get a list of shipments available for a user.
      *
@@ -18,7 +12,7 @@ trait ShipmentApi
      */
     public function getShipments(): array
     {
-        $endpoint = sprintf('%s', self::SHIPMENT_ENDPOINT);
+        $endpoint = sprintf('%s', TerminalAfricaConstant::SHIPMENT_ENDPOINT);
 
         return $this->makeRequest(
             method: 'GET',
@@ -34,7 +28,7 @@ trait ShipmentApi
      */
     public function getShipment(string $shipmentId): array
     {
-        $endpoint = sprintf('%s/%s', self::SHIPMENT_ENDPOINT, $shipmentId);
+        $endpoint = sprintf('%s/%s', TerminalAfricaConstant::SHIPMENT_ENDPOINT, $shipmentId);
 
         return $this->makeRequest(
             method: 'GET',
@@ -51,7 +45,7 @@ trait ShipmentApi
      */
     public function createShipment(array $formParams): array
     {
-         $endpoint = sprintf('%s', self::SHIPMENT_ENDPOINT);
+         $endpoint = sprintf('%s', TerminalAfricaConstant::SHIPMENT_ENDPOINT);
 
         return $this->makeRequest(
             method: 'POST',
@@ -70,7 +64,7 @@ trait ShipmentApi
      */
     public function updateShipment(string $shipmentId, array $formParams): array
     {
-        $endpoint = sprintf('%s/%s', self::SHIPMENT_ENDPOINT, $shipmentId);
+        $endpoint = sprintf('%s/%s', TerminalAfricaConstant::SHIPMENT_ENDPOINT, $shipmentId);
 
         return $this->makeRequest(
             method: 'PUT',
@@ -87,7 +81,7 @@ trait ShipmentApi
      */
     public function trackShipment(string $shipmentId): array
     {
-        $endpoint = sprintf('%s/track/%s', self::SHIPMENT_ENDPOINT, $shipmentId);
+        $endpoint = sprintf('%s/track/%s', TerminalAfricaConstant::SHIPMENT_ENDPOINT, $shipmentId);
 
         return $this->makeRequest(
             method: 'GET',
@@ -103,7 +97,7 @@ trait ShipmentApi
      */
     public function cancelShipment(array $formParams): array
     {
-        $endpoint = sprintf('%s/cancel', self::SHIPMENT_ENDPOINT);
+        $endpoint = sprintf('%s/cancel', TerminalAfricaConstant::SHIPMENT_ENDPOINT);
 
         return $this->makeRequest(
             method: 'POST',
@@ -120,7 +114,7 @@ trait ShipmentApi
      */
     public function deleteShipment(array $formParams): array
     {
-        $endpoint = sprintf('%s', self::SHIPMENT_ENDPOINT);
+        $endpoint = sprintf('%s', TerminalAfricaConstant::SHIPMENT_ENDPOINT);
 
         return $this->makeRequest(
             method: 'DELETE',

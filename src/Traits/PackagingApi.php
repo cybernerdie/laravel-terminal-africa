@@ -2,15 +2,9 @@
 
 namespace Cybernerdie\LaravelTerminalAfrica\Traits;
 
+use Cybernerdie\LaravelTerminalAfrica\Constants\TerminalAfricaConstant;
 trait PackagingApi
 {
-    /**
-     * Endpoint for packaging API calls
-     *
-     * @var string
-     */
-    const PACKAGING_ENDPOINT = '/packaging';
-
     /**
      * This method allows you to add new packaging.
      *
@@ -20,7 +14,7 @@ trait PackagingApi
      */
     public function createPackaging(array $formParams): array
     {
-        $endpoint = sprintf('%s', self::PACKAGING_ENDPOINT);
+        $endpoint = sprintf('%s', TerminalAfricaConstant::PACKAGING_ENDPOINT);
 
         return $this->makeRequest(
             method: 'POST',
@@ -38,7 +32,7 @@ trait PackagingApi
      */
     public function getPackagingList(array $queryParams = []): array
     {
-        $endpoint = sprintf('%s', self::PACKAGING_ENDPOINT);
+        $endpoint = sprintf('%s', TerminalAfricaConstant::PACKAGING_ENDPOINT);
 
         return $this->makeRequest(
             method: 'GET',
@@ -56,7 +50,7 @@ trait PackagingApi
      */
     public function getPackaging(string $packagingId): array
     {
-        $endpoint = sprintf('%s/%s', self::PACKAGING_ENDPOINT, $packagingId);
+        $endpoint = sprintf('%s/%s', TerminalAfricaConstant::PACKAGING_ENDPOINT, $packagingId);
 
         return $this->makeRequest(
             method: 'GET',
@@ -73,7 +67,7 @@ trait PackagingApi
      */
     public function updatePackaging(string $packagingId, array $formParams): array
     {
-        $endpoint = sprintf('%s/%s', self::PACKAGING_ENDPOINT, $packagingId);
+        $endpoint = sprintf('%s/%s', TerminalAfricaConstant::PACKAGING_ENDPOINT, $packagingId);
 
         return $this->makeRequest(
             method: 'PUT',

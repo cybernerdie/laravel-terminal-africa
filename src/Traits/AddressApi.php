@@ -2,15 +2,9 @@
 
 namespace Cybernerdie\LaravelTerminalAfrica\Traits;
 
+use Cybernerdie\LaravelTerminalAfrica\Constants\TerminalAfricaConstant;
 trait AddressApi
 {
-    /**
-     * Endpoint for address API calls
-     *
-     * @var string
-     */
-    const ADDRESS_ENDPOINT = '/addresses';
-
     /**
      * This method allows you to get a list of all addresses available.
      *
@@ -20,7 +14,7 @@ trait AddressApi
      */
     public function getAddresses(array $queryParams = []): array
     {
-        $endpoint = sprintf('%s', self::ADDRESS_ENDPOINT);
+        $endpoint = sprintf('%s', TerminalAfricaConstant::ADDRESS_ENDPOINT);
 
         return $this->makeRequest(
             method: 'GET',
@@ -38,7 +32,7 @@ trait AddressApi
      */
     public function getAddress(string $addressId): array
     {
-        $endpoint = sprintf('%s/%s', self::ADDRESS_ENDPOINT, $addressId);
+        $endpoint = sprintf('%s/%s', TerminalAfricaConstant::ADDRESS_ENDPOINT, $addressId);
 
         return $this->makeRequest(
             method: 'GET',
@@ -55,7 +49,7 @@ trait AddressApi
      */
     public function createAddress(array $formParams): array
     {
-        $endpoint = sprintf('%s', self::ADDRESS_ENDPOINT);
+        $endpoint = sprintf('%s', TerminalAfricaConstant::ADDRESS_ENDPOINT);
 
         return $this->makeRequest(
             method: 'POST',
@@ -73,7 +67,7 @@ trait AddressApi
      */
     public function updateAddress(string $addressId, array $formParams): array
     {
-        $endpoint = sprintf('%s/%s', self::ADDRESS_ENDPOINT, $addressId);
+        $endpoint = sprintf('%s/%s', TerminalAfricaConstant::ADDRESS_ENDPOINT, $addressId);
 
         return $this->makeRequest(
             method: 'PUT',
@@ -91,7 +85,7 @@ trait AddressApi
      */
     public function validateAddress(array $formParams): array
     {
-        $endpoint = sprintf('%s/validate', self::ADDRESS_ENDPOINT);
+        $endpoint = sprintf('%s/validate', TerminalAfricaConstant::ADDRESS_ENDPOINT);
 
         return $this->makeRequest(
             method: 'POST',
@@ -109,7 +103,7 @@ trait AddressApi
      */
     public function setDefaultAddress(array $formParams): array
     {
-        $endpoint = sprintf('%s/default/sender', self::ADDRESS_ENDPOINT);
+        $endpoint = sprintf('%s/default/sender', TerminalAfricaConstant::ADDRESS_ENDPOINT);
 
         return $this->makeRequest(
             method: 'POST',
@@ -125,7 +119,7 @@ trait AddressApi
      */
     public function getDefaultAddress(): array
     {
-        $endpoint = sprintf('%s/default/sender', self::ADDRESS_ENDPOINT);
+        $endpoint = sprintf('%s/default/sender', TerminalAfricaConstant::ADDRESS_ENDPOINT);
 
         return $this->makeRequest(
             method: 'POST',

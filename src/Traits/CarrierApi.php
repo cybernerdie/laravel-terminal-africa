@@ -2,15 +2,10 @@
 
 namespace Cybernerdie\LaravelTerminalAfrica\Traits;
 
+use Cybernerdie\LaravelTerminalAfrica\Constants\TerminalAfricaConstant;
+
 trait CarrierApi
 {
-    /**
-     * Endpoint for carrier API calls
-     *
-     * @var string
-     */
-    const CARRIER_ENDPOINT = '/carriers';
-
     /**
      * This method allows you to get a list of carriers available on TShip.
      *
@@ -20,7 +15,7 @@ trait CarrierApi
      */
     public function getCarriers(array $queryParams = []): array
     {
-        $endpoint = sprintf('%s', self::CARRIER_ENDPOINT);
+        $endpoint = sprintf('%s', TerminalAfricaConstant::CARRIER_ENDPOINT);
 
         return $this->makeRequest(
             method: 'GET',
@@ -38,7 +33,7 @@ trait CarrierApi
      */
     public function getCarrier(string $carrierId): array
     {
-        $endpoint = sprintf('%s/%s', self::CARRIER_ENDPOINT, $carrierId);
+        $endpoint = sprintf('%s/%s', TerminalAfricaConstant::CARRIER_ENDPOINT, $carrierId);
 
         return $this->makeRequest(
             method: 'GET',
@@ -57,7 +52,7 @@ trait CarrierApi
      */
     public function enableCarrier(string $carrierId, array $queryParams): array
     {
-        $endpoint = sprintf('%s/enable/%s', self::CARRIER_ENDPOINT, $carrierId);
+        $endpoint = sprintf('%s/enable/%s', TerminalAfricaConstant::CARRIER_ENDPOINT, $carrierId);
 
         return $this->makeRequest(
             method: 'POST',
@@ -75,7 +70,7 @@ trait CarrierApi
      */
     public function enableMultipleCarriers(array $formParams): array
     {
-        $endpoint = sprintf('%s/multiple/enable', self::CARRIER_ENDPOINT);
+        $endpoint = sprintf('%s/multiple/enable', TerminalAfricaConstant::CARRIER_ENDPOINT);
 
         return $this->makeRequest(
             method: 'POST',
@@ -94,7 +89,7 @@ trait CarrierApi
      */
     public function disableCarrier(string $carrierId, array $queryParams): array
     {
-        $endpoint = sprintf('%s/disable/%s', self::CARRIER_ENDPOINT, $carrierId);
+        $endpoint = sprintf('%s/disable/%s', TerminalAfricaConstant::CARRIER_ENDPOINT, $carrierId);
 
         return $this->makeRequest(
             method: 'POST',
@@ -112,7 +107,7 @@ trait CarrierApi
      */
     public function disableMultipleCarriers(array $formParams): array
     {
-        $endpoint = sprintf('%s/multiple/disable', self::CARRIER_ENDPOINT);
+        $endpoint = sprintf('%s/multiple/disable', TerminalAfricaConstant::CARRIER_ENDPOINT);
 
         return $this->makeRequest(
             method: 'POST',

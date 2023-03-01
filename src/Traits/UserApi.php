@@ -2,15 +2,9 @@
 
 namespace Cybernerdie\LaravelTerminalAfrica\Traits;
 
+use Cybernerdie\LaravelTerminalAfrica\Constants\TerminalAfricaConstant;
 trait UserApi
 {
-    /**
-     * Endpoint for user API calls
-     *
-     * @var string
-     */
-    const USER_ENDPOINT = '/users';
-
     /**
      * This endpoint allows you to retrieve details for a user account.
      *
@@ -19,7 +13,7 @@ trait UserApi
      */
     public function getUser(string $userId): array
     {
-        $endpoint = sprintf('%s/%s', self::USER_ENDPOINT, $userId);
+        $endpoint = sprintf('%s/%s', TerminalAfricaConstant::USER_ENDPOINT, $userId);
 
         return $this->makeRequest(
             method: 'GET',
@@ -35,7 +29,7 @@ trait UserApi
      */
     public function getWalletBalance(array $queryParams): array
     {
-        $endpoint = sprintf('%s/wallet-balance', self::USER_ENDPOINT);
+        $endpoint = sprintf('%s/wallet-balance', TerminalAfricaConstant::USER_ENDPOINT);
 
         return $this->makeRequest(
             method: 'GET',
@@ -52,7 +46,7 @@ trait UserApi
      */
     public function getUserCarriers(array $queryParams = []): array
     {
-        $endpoint = sprintf('%s/carriers', self::USER_ENDPOINT);
+        $endpoint = sprintf('%s/carriers', TerminalAfricaConstant::USER_ENDPOINT);
 
         return $this->makeRequest(
             method: 'GET',
