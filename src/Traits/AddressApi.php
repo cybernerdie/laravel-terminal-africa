@@ -8,7 +8,7 @@ trait AddressApi
     /**
      * This method allows you to get a list of all addresses available.
      *
-     * @param  array $queryParams
+     * @param array $queryParams
      *
      * @return array
      */
@@ -43,7 +43,7 @@ trait AddressApi
     /**
      * This method allows you create an address for getting rates or arranging pickup and delivery.
      *
-     * @param  array $formParams
+     * @param array $formParams
      *
      * @return array
      */
@@ -97,7 +97,7 @@ trait AddressApi
     /**
      * This method allows you to set an address as a default sender
      *
-     * @param string $formParams
+     * @param array $formParams
      *
      * @return array
      */
