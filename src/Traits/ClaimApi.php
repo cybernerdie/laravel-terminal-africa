@@ -2,14 +2,14 @@
 
 namespace Cybernerdie\LaravelTerminalAfrica\Traits;
 
-trait ClaimTrait
+trait ClaimApi
 {
     /**
      * Endpoint for claims API calls
      *
      * @var string
      */
-    const CLAIM_ENDPOINT = '/claims/';
+    const CLAIM_ENDPOINT = '/claims';
 
     /**
      * This method allows you to get a list of claims available for a specific user
@@ -38,7 +38,7 @@ trait ClaimTrait
      */
     public function getClaim(string $claimId): array
     {
-        $endpoint = sprintf('%s%s', self::CLAIM_ENDPOINT, $claimId);
+        $endpoint = sprintf('%s/%s', self::CLAIM_ENDPOINT, $claimId);
 
         return $this->makeRequest(
             method: 'GET',

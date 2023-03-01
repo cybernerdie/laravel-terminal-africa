@@ -2,25 +2,25 @@
 
 namespace Cybernerdie\LaravelTerminalAfrica\Traits;
 
-trait PackagingTrait
+trait ParcelApi
 {
     /**
-     * Endpoint for packaging API calls
+     * Endpoint for parcel API calls
      *
      * @var string
      */
-    const PACKAGING_ENDPOINT = '/packaging/';
+    const PARCEL_ENDPOINT = '/parcels';
 
     /**
-     * This method allows you to add new packaging.
+     * This method allows you to create a new parcel for a shipment.
      *
      * @param  array $formParams
      *
      * @return array
      */
-    public function createPackaging(array $formParams): array
+    public function createParcel(array $formParams): array
     {
-        $endpoint = sprintf('%s', self::PACKAGING_ENDPOINT);
+        $endpoint = sprintf('%s', self::PARCEL_ENDPOINT);
 
         return $this->makeRequest(
             method: 'POST',
@@ -36,9 +36,9 @@ trait PackagingTrait
      *
      * @return array
      */
-    public function getPackagingList(array $queryParams = []): array
+    public function getParcels(array $queryParams = []): array
     {
-        $endpoint = sprintf('%s', self::PACKAGING_ENDPOINT);
+        $endpoint = sprintf('%s', self::PARCEL_ENDPOINT);
 
         return $this->makeRequest(
             method: 'GET',
@@ -48,15 +48,15 @@ trait PackagingTrait
     }
 
     /**
-     * This method allows you to retrieve details of a specific packaging.
+     * This method allows you to retrieve details of a specific parcel.
      *
-     * @param string $packagingId
+     * @param string $parcelId
      *
      * @return array
      */
-    public function getPackaging(string $packagingId): array
+    public function getParcel(string $parcelId): array
     {
-        $endpoint = sprintf('%s%s', self::PACKAGING_ENDPOINT, $packagingId);
+        $endpoint = sprintf('%s/%s', self::PARCEL_ENDPOINT, $parcelId);
 
         return $this->makeRequest(
             method: 'GET',
@@ -65,15 +65,15 @@ trait PackagingTrait
     }
 
     /**
-     * This method allows you to update an existing packaging.
+     * This method allows you to update an existing parcel.
      *
      * @param array $formParams
      *
      * @return array
      */
-    public function updatePackaging(string $packagingId, array $formParams): array
+    public function updateParcel(string $parcelId, array $formParams): array
     {
-        $endpoint = sprintf('%s%s', self::PACKAGING_ENDPOINT, $packagingId);
+        $endpoint = sprintf('%s/%s', self::PARCEL_ENDPOINT, $parcelId);
 
         return $this->makeRequest(
             method: 'PUT',

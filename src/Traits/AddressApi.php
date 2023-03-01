@@ -2,14 +2,14 @@
 
 namespace Cybernerdie\LaravelTerminalAfrica\Traits;
 
-trait AddressTrait
+trait AddressApi
 {
     /**
      * Endpoint for address API calls
      *
      * @var string
      */
-    const ADDRESS_ENDPOINT = '/addresses/';
+    const ADDRESS_ENDPOINT = '/addresses';
 
     /**
      * This method allows you to get a list of all addresses available.
@@ -38,7 +38,7 @@ trait AddressTrait
      */
     public function getAddress(string $addressId): array
     {
-        $endpoint = sprintf('%s%s', self::ADDRESS_ENDPOINT, $addressId);
+        $endpoint = sprintf('%s/%s', self::ADDRESS_ENDPOINT, $addressId);
 
         return $this->makeRequest(
             method: 'GET',
@@ -73,7 +73,7 @@ trait AddressTrait
      */
     public function updateAddress(string $addressId, array $formParams): array
     {
-        $endpoint = sprintf('%s%s', self::ADDRESS_ENDPOINT, $addressId);
+        $endpoint = sprintf('%s/%s', self::ADDRESS_ENDPOINT, $addressId);
 
         return $this->makeRequest(
             method: 'PUT',
@@ -91,12 +91,45 @@ trait AddressTrait
      */
     public function validateAddress(array $formParams): array
     {
-        $endpoint = sprintf('%svalidate', self::ADDRESS_ENDPOINT);
+        $endpoint = sprintf('%s/validate', self::ADDRESS_ENDPOINT);
 
         return $this->makeRequest(
             method: 'POST',
             endpoint: $endpoint,
             formParams: $formParams
+        );
+    }
+
+    /**
+     * This method allows you to set an address as a default sender
+     *
+     * @param string $formParams
+     *
+     * @return array
+     */
+    public function setDefaultAddress(array $formParams): array
+    {
+        $endpoint = sprintf('%s/default/sender', self::ADDRESS_ENDPOINT);
+
+        return $this->makeRequest(
+            method: 'POST',
+            endpoint: $endpoint,
+            formParams: $formParams
+        );
+    }
+
+    /**
+     * This method allows you to get the sender default address
+     *
+     * @return array
+     */
+    public function getDefaultAddress(): array
+    {
+        $endpoint = sprintf('%s/default/sender', self::ADDRESS_ENDPOINT);
+
+        return $this->makeRequest(
+            method: 'POST',
+            endpoint: $endpoint
         );
     }
 }

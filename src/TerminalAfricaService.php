@@ -5,30 +5,26 @@ namespace Cybernerdie\LaravelTerminalAfrica;
 use GuzzleHttp\Client;
 use Cybernerdie\LaravelTerminalAfrica\Contracts\TerminalAfricaContract;
 use Cybernerdie\LaravelTerminalAfrica\Exceptions\TerminalAfricaException;
-use Cybernerdie\LaravelTerminalAfrica\Traits\AddressTrait;
-use Cybernerdie\LaravelTerminalAfrica\Traits\CarrierTrait;
-use Cybernerdie\LaravelTerminalAfrica\Traits\ClaimTrait;
-use Cybernerdie\LaravelTerminalAfrica\Traits\CustomerTrait;
-use Cybernerdie\LaravelTerminalAfrica\Traits\InsuranceTrait;
-use Cybernerdie\LaravelTerminalAfrica\Traits\PackagingTrait;
-use Cybernerdie\LaravelTerminalAfrica\Traits\ParcelTrait;
-use Cybernerdie\LaravelTerminalAfrica\Traits\RateTrait;
-use Cybernerdie\LaravelTerminalAfrica\Traits\ShipmentTrait;
+use Cybernerdie\LaravelTerminalAfrica\Traits\AddressApi;
+use Cybernerdie\LaravelTerminalAfrica\Traits\CarrierApi;
+use Cybernerdie\LaravelTerminalAfrica\Traits\ClaimApi;
+use Cybernerdie\LaravelTerminalAfrica\Traits\InsuranceApi;
+use Cybernerdie\LaravelTerminalAfrica\Traits\LocationApi;
+use Cybernerdie\LaravelTerminalAfrica\Traits\PackagingApi;
+use Cybernerdie\LaravelTerminalAfrica\Traits\ParcelApi;
+use Cybernerdie\LaravelTerminalAfrica\Traits\RateApi;
+use Cybernerdie\LaravelTerminalAfrica\Traits\ShipmentApi;
+use Cybernerdie\LaravelTerminalAfrica\Traits\TransactionApi;
+use Cybernerdie\LaravelTerminalAfrica\Traits\UserApi;
 use Illuminate\Http\Client\RequestException;
 
 class TerminalAfricaService implements TerminalAfricaContract
 {
-    use ShipmentTrait,
-        RateTrait,
-        CustomerTrait,
-        AddressTrait,
-        CarrierTrait,
-        ClaimTrait,
-        PackagingTrait,
-        InsuranceTrait,
-        ParcelTrait;
+    use ShipmentApi, RateApi, AddressApi, CarrierApi, ClaimApi,
+        PackagingApi, InsuranceApi, ParcelApi, TransactionApi,
+        UserApi, LocationApi;
 
-     /**
+    /**
      * The base uri to consume the Terminal Africa API
      *
      * @var string
@@ -42,7 +38,7 @@ class TerminalAfricaService implements TerminalAfricaContract
      */
     protected string $secret;
 
-     /**
+    /**
      * The HTTP client
      */
     protected Client $client;
