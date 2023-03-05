@@ -9,13 +9,14 @@ trait ShipmentApi
     /**
      * This method allows you to get a list of shipments available for a user.
      */
-    public function getShipments(): array
+    public function getShipments(array $queryParams = []): array
     {
         $endpoint = sprintf('%s', TerminalAfricaConstant::SHIPMENT_ENDPOINT);
 
         return $this->makeRequest(
             method: 'GET',
-            endpoint: $endpoint
+            endpoint: $endpoint,
+            queryParams: $queryParams
         );
     }
 
