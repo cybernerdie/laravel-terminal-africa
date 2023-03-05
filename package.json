@@ -1,0 +1,22 @@
+{
+  "name": "laravel-terminal-africa-docs",
+  "version": "1.0.0",
+  "description": "A laravel package for integrating Terminal Africa",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs"
+  },
+  "keywords": [],
+  "authors": {
+    "name": "Joshua Paul (cybernerdie)",
+    "email": "veecthorpaul@gmail.com"
+  },
+  "repository": "https://github.com/cybernerdie/laravel-terminal-africa/docs",
+  "license": "ISC",
+  "dependencies": {
+    "vitepress": "^1.0.0-alpha.27",
+    "vue": "^3.2.41"
+  }
+}
