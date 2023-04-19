@@ -31,7 +31,7 @@
             'customer_name' => 'John Doe',
             'customer_email' => 'johndoe@example.com'
         ],
-        'packaging' => 'xxxxxxxxx';,
+        'packaging' => 'xxxxxxxxx',
         'weight_unit' => 'kg'
     ];
 ```

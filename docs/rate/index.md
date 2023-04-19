@@ -30,7 +30,7 @@ This method allows you to retrieve rates for a shipment.
 ```php
 $ratePayload = [
         'currency' => 'NGN',
-        'shipment_id' => 'xxxxxxxxxxx'
+        'shipment_id' => 'xxxxxxxxxxx',
         'pickup_address' => 'xxxxxxxxxxx',
         'delivery_address' => 'xxxxxxxxxxx',
 ];
@@ -45,7 +45,7 @@ This method allows you to retrieve rates for a shipment.
 ```php
 $ratePayload = [
         'currency' => 'NGN',
-        'shipment_id' => 'xxxxxxxxxxx'
+        'shipment_id' => 'xxxxxxxxxxx',
         'pickup_address' => 'xxxxxxxxxxx',
         'delivery_address' => 'xxxxxxxxxxx',
         'parcels' = ['xxxxxxxxxxx', 'xxxxxxxxxxx']

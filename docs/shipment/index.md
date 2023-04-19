@@ -87,3 +87,16 @@ $shipmentPayload = [
 
 $shipment = TerminalAfrica::deleteShipment($shipmentPayload);
 ```
+
+## Arrange Pickup and Delivery for Shipment
+
+This method allows you to arrange pickup for a shipment.
+
+```php
+$shipmentPayload = [
+  'rate_id' => 'xxxxxxxxx',
+  'shipment_id' => 'xxxxxxxxx', //optional
+];
+
+$shipment = TerminalAfrica::arrangePickup($payload);
+```

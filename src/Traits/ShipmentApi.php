@@ -48,6 +48,20 @@ trait ShipmentApi
     }
 
     /**
+     * This method allows you to arrange pickup and delivery for a shipment.
+     */
+    public function arrangePickup(array $formParams): array
+    {
+        $endpoint = sprintf('%s/pickup', TerminalAfricaConstant::SHIPMENT_ENDPOINT);
+
+        return $this->makeRequest(
+            method: 'POST',
+            endpoint: $endpoint,
+            formParams: $formParams
+        );
+    }
+
+    /**
      * This method allows you to update a shipment.
      */
     public function updateShipment(string $shipmentId, array $formParams): array

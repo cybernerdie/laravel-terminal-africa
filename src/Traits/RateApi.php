@@ -36,28 +36,28 @@ trait RateApi
     /**
      * This method allows you to retrieve rates for a shipment.
      */
-    public function getRateForShipment(array $formParams): array
+    public function getRateForShipment(array $queryParams): array
     {
         $endpoint = sprintf('%s/shipment', TerminalAfricaConstant::RATE_ENDPOINT);
 
         return $this->makeRequest(
             method: 'GET',
             endpoint: $endpoint,
-            formParams: $formParams
+            queryParams: $queryParams
         );
     }
 
     /**
      * This method allows you to retrieve rates for a shipment.
      */
-    public function getRateForMultiParcelShipment(array $formParams): array
+    public function getRateForMultiParcelShipment(array $queryParams): array
     {
         $endpoint = sprintf('%s/multi/shipment', TerminalAfricaConstant::RATE_ENDPOINT);
 
         return $this->makeRequest(
             method: 'GET',
             endpoint: $endpoint,
-            formParams: $formParams
+            queryParams: $queryParams
         );
     }
 }
