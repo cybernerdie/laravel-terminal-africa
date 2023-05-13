@@ -15,6 +15,7 @@ use Cybernerdie\LaravelTerminalAfrica\Traits\RateApi;
 use Cybernerdie\LaravelTerminalAfrica\Traits\ShipmentApi;
 use Cybernerdie\LaravelTerminalAfrica\Traits\TransactionApi;
 use Cybernerdie\LaravelTerminalAfrica\Traits\UserApi;
+use Cybernerdie\LaravelTerminalAfrica\Traits\WebhookApi;
 use GuzzleHttp\Client;
 use Illuminate\Http\Client\RequestException;
 
@@ -22,7 +23,7 @@ class TerminalAfricaService implements TerminalAfricaContract
 {
     use ShipmentApi, RateApi, AddressApi, CarrierApi, ClaimApi,
         PackagingApi, InsuranceApi, ParcelApi, TransactionApi,
-        UserApi, LocationApi;
+        UserApi, LocationApi, WebhookApi;
 
     /**
      * The base uri to consume the Terminal Africa API

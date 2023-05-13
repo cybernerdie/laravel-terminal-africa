@@ -23,4 +23,6 @@ class TerminalAfricaConstant
     const TRANSACTION_ENDPOINT = '/transactions';
 
     const USER_ENDPOINT = '/users';
+
+    const WEBHOOK_ENDPOINT = '/webhooks';
 }

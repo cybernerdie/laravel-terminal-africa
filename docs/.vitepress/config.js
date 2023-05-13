@@ -49,6 +49,7 @@ export default {
             { text: "Shipments", link: "/shipment/index.html" },
             { text: "Transactions", link: "/transaction/index.html" },
             { text: "Miscellaneous", link: "/miscellaneous/index.html" },
+            { text: "Webhooks", link: "/webhook/index.html" },
           ],
         }
 
