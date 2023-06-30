@@ -32,7 +32,8 @@ export default {
           collapsible: true,
           items: [
             { text: "Installation", link: "/getting-started/installation.html" },
-          ],
+            { text: "Usage", link: "/getting-started/usage.html" },
+        ],
         },
 
         {
