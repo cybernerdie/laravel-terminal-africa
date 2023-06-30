@@ -1,4 +1,4 @@
-## Usage
+# Usage
 
 ## Introduction
 The `LaravelTerminalAfrica` package provides convenient methods for usage. This document explains the different ways you can use the package to interact with the TerminalAfrica service. The `getAddresses` method is used as an example throughout this guide.
