@@ -69,11 +69,8 @@ $shipment = TerminalAfrica::trackShipment($shipmentId);
 This method allows you to cancel a shipment before carrier pickup.
 
 ```php
-$shipmentPayload = [
-  'shipment_id' => 'xxxxxxxxx'
-];
-
-$shipment = TerminalAfrica::cancelShipment($shipmentPayload);
+$shipmentId = 'xxxxxxxxx';
+$shipment = TerminalAfrica::cancelShipment($shipmentId);
 ```
 
 ## Delete Shipment
@@ -81,11 +78,8 @@ $shipment = TerminalAfrica::cancelShipment($shipmentPayload);
 This method allows you to delete a draft shipment.
 
 ```php
-$shipmentPayload = [
-  'shipment_id' => 'xxxxxxxxx'
-];
-
-$shipment = TerminalAfrica::deleteShipment($shipmentPayload);
+$shipmentId = 'xxxxxxxxx';
+$shipment = TerminalAfrica::deleteShipment($shipmentId);
 ```
 
 ## Arrange Pickup and Delivery for Shipment

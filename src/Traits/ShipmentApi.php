@@ -91,9 +91,13 @@ trait ShipmentApi
     /**
      * This method allows you to cancel a shipment.
      */
-    public function cancelShipment(array $formParams): array
+    public function cancelShipment(string $shipmentId): array
     {
         $endpoint = sprintf('%s/cancel', TerminalAfricaConstant::SHIPMENT_ENDPOINT);
+
+        $formParams = [
+            'shipment_id' => $shipmentId
+        ];
 
         return $this->makeRequest(
             method: 'POST',
@@ -105,9 +109,13 @@ trait ShipmentApi
     /**
      * This method allows you to delete a shipment.
      */
-    public function deleteShipment(array $formParams): array
+    public function deleteShipment(string $shipmentId): array
     {
         $endpoint = sprintf('%s', TerminalAfricaConstant::SHIPMENT_ENDPOINT);
+
+        $formParams = [
+            'shipment_id' => $shipmentId
+        ];
 
         return $this->makeRequest(
             method: 'DELETE',
