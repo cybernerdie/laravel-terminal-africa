@@ -96,7 +96,7 @@ trait ShipmentApi
         $endpoint = sprintf('%s/cancel', TerminalAfricaConstant::SHIPMENT_ENDPOINT);
 
         $formParams = [
-            'shipment_id' => $shipmentId
+            'shipment_id' => $shipmentId,
         ];
 
         return $this->makeRequest(
@@ -114,7 +114,7 @@ trait ShipmentApi
         $endpoint = sprintf('%s', TerminalAfricaConstant::SHIPMENT_ENDPOINT);
 
         $formParams = [
-            'shipment_id' => $shipmentId
+            'shipment_id' => $shipmentId,
         ];
 
         return $this->makeRequest(
