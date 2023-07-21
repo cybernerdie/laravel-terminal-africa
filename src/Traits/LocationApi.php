@@ -20,9 +20,13 @@ trait LocationApi
     /**
      * This endpoint allows you to retrieve a list of valid states for a given country.
      */
-    public function getStates(array $queryParams): array
+    public function getStates(string $countryCode): array
     {
         $endpoint = '/states';
+
+        $queryParams = [
+            'country_code' => $countryCode,
+        ];
 
         return $this->makeRequest(
             method: 'GET',
@@ -34,9 +38,14 @@ trait LocationApi
     /**
      * This endpoint allows you to retrieve a list of valid cities available in a specific country.
      */
-    public function getCities(array $queryParams): array
+    public function getCities(string $countryCode, string $stateCode): array
     {
         $endpoint = '/cities';
+
+        $queryParams = [
+            'country_code' => $countryCode,
+            'state_code' => $stateCode,
+        ];
 
         return $this->makeRequest(
             method: 'GET',

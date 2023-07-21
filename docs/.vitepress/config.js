@@ -51,6 +51,7 @@ export default {
             { text: "Transactions", link: "/transaction/index.html" },
             { text: "Miscellaneous", link: "/miscellaneous/index.html" },
             { text: "Webhooks", link: "/webhook/index.html" },
+            { text: "Location", link: "/location/index.html" },
           ],
         }
 
